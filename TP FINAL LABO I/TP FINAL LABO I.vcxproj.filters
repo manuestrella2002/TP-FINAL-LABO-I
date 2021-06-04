@@ -15,34 +15,34 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cEquipoMedico.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cElectrocardiografo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cRespirador.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cMesaAnestesia.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="cHospital.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cListaT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cCalendario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cLugares.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cReparacion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cEquipoMedico.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cElectrocardiografo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cRespirador.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cMesaAnestesia.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="cHospital.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cCalendario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cLugares.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cReparacion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
