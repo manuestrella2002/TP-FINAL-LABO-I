@@ -139,17 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cElectrocardiografo.cpp" />
-    <ClCompile Include="cEquipoMedico.cpp" />
-    <ClCompile Include="cMesaAnestesia.cpp" />
-    <ClCompile Include="cRespirador.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="cCalendario.h" />
+    <ClInclude Include="cHospital.h" />
+    <ClInclude Include="cListaT.h" />
+    <ClInclude Include="cLugares.h" />
+    <ClInclude Include="cReparacion.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cElectrocardiografo.h" />
-    <ClInclude Include="cEquipoMedico.h" />
-    <ClInclude Include="cMesaAnestesia.h" />
-    <ClInclude Include="cRespirador.h" />
+    <ClCompile Include="cCalendario.cpp" />
+    <ClCompile Include="cHospital.cpp" />
+    <ClCompile Include="cLugares.cpp" />
+    <ClCompile Include="cReparacion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
