@@ -6,7 +6,7 @@ using namespace std;
 
 class cCalendario
 {
-
+	tm* ListaFechaMantenimiento;
 
 public:
 	cCalendario();

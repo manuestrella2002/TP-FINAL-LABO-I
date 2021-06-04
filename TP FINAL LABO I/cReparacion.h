@@ -14,9 +14,9 @@ class cReparacion
 {
 	string Codigo;
 	float  Precio;
-	Problema Problema;
+	Problema Problema_;
 public:
-	cReparacion();
+	cReparacion(string Cod_, float precio_, Problema probl);
 	~cReparacion();
 
 	string To_String();

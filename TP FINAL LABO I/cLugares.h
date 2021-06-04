@@ -11,7 +11,7 @@ class cLugares
 
 
 public:
-	cLugares();
+	cLugares(string nom_, string pabellon_, int piso_);
 	~cLugares();
 	void RastrearEquipo();
 
@@ -19,4 +19,5 @@ public:
 	void Imprimir();
 
 };
+ostream& operator << (ostream out, cLugares& lugar);
 

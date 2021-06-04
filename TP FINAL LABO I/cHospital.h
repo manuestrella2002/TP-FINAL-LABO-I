@@ -12,11 +12,13 @@ class cHospital
 	float CostosEquiposMant, CuentaCorriente;
 	string Direccion, Nombre;
 
+	
+public:
 	cListaT <cEquipoMedico>* ListaEquipos;
 	cListaT <cLugares>* ListaLugares;
 	cListaT <cReparacion>* ListaReparaciones;
-public:
-	cHospital();
+
+	cHospital(string nom_, string direc_, float cuenta);
 	~cHospital();
 
 	string To_String();

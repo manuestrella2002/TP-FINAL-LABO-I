@@ -1,0 +1,1 @@
+#include "cEquipoMedico.h"
