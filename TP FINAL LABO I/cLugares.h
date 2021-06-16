@@ -13,11 +13,16 @@ class cLugares
 public:
 	cLugares(string nom_, string pabellon_, int piso_);
 	~cLugares();
-	void RastrearEquipo();
+	bool VerificarLocalizado();
 
 	string To_String();
 	void Imprimir();
 
 };
-ostream& operator << (ostream out, cLugares& lugar);
+
+//DEBE IR ESTO ACA??
+ostream& operator << (ostream& out, cLugares& lugar)
+{
+	lugar.Imprimir();
+}
 

@@ -16,4 +16,12 @@ public:
 	string GetClave();
 };
 
+istream& operator>>(istream& in, cElectrocardiografo& Electro)
+{
 
+}
+
+ostream& operator<<(ostream& out, cElectrocardiografo& Electro)
+{
+	Electro.Imprimir();
+}

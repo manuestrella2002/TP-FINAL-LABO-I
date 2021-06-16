@@ -42,6 +42,8 @@ public:
 	T* operator[](unsigned int pos);
 
 	void operator + (T* item);
+
+
 };
 
 
@@ -219,3 +221,6 @@ inline void cListaT<T>::operator+(T* item)
 {
 	AgregarItem(item);
 }
+
+
+

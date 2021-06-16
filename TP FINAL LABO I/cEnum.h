@@ -1,0 +1,17 @@
+#pragma once
+
+enum class Estado
+{
+	EN_USO,
+	EN_ESPERA,
+	FUERA_SERVICIO,
+	MANTENIMIENTO
+};
+enum class Problema
+{
+	ELECTRICO,
+	FALTA_COMPONENTE,
+	MECANICO,
+	ESPECIALIZADO,
+	EN_ESPERA,
+};

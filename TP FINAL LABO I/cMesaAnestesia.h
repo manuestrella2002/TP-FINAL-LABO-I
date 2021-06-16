@@ -17,3 +17,12 @@ public:
 	string GetClave();
 };
 
+istream& operator>>(istream& in, cMesaAnestesia& Mesa)
+{
+
+}
+
+ostream& operator<<(ostream& out, cMesaAnestesia& Mesa)
+{
+	Mesa.Imprimir();
+}

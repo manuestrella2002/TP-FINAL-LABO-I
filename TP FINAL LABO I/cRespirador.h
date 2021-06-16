@@ -17,3 +17,12 @@ public:
 	string GetClave();
 };
 
+istream& operator>>(istream& in, cRespirador& Respirador)
+{
+
+}
+
+ostream& operator<<(ostream& out, cRespirador& Respirador)
+{
+	Respirador.Imprimir();
+}
