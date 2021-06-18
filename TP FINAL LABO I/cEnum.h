@@ -1,13 +1,13 @@
 #pragma once
 
-enum class Estado
+enum class cEstado
 {
 	EN_USO,
 	EN_ESPERA,
 	FUERA_SERVICIO,
 	MANTENIMIENTO
 };
-enum class Problema
+enum class cProblema
 {
 	ELECTRICO,
 	FALTA_COMPONENTE,

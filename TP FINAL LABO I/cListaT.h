@@ -3,6 +3,7 @@
 
 #include <string>
 #include "cHospital.h"
+#include"cEnum.h"
 
 using namespace std;
 

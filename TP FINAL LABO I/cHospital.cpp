@@ -24,11 +24,3 @@ void cHospital::ContarFueraServicio()
     Cant_Equip_F_Serv=ListaEquipos->ContarEquipF_Serv();
 }
 
-string cHospital::To_String()
-{
-    return string();
-}
-
-void cHospital::Imprimir()
-{
-}

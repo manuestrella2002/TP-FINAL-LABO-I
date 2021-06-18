@@ -37,9 +37,10 @@ inline void cListaDer::RastrearEquipo()
 inline int cListaDer::ContarEquipF_Serv()
 {
 	int cont = 0;
+	
 	for (int i = 0; i < CA; i++)
 	{
-		if (vector[i]->ChequearEstado() == FUERA_SERVICIO)
+		if (vector[i]->ChequearEstado() == cEstado::FUERA_SERVICIO)
 		{
 			cont++;
 		}

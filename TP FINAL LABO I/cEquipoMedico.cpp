@@ -7,6 +7,11 @@ bool cEquipoMedico::VerificarLugares()
     return false;
 }
 
+string cEquipoMedico::getclave()
+{
+    return codigo;
+}
+
 cEquipoMedico::cEquipoMedico(string Nom_, const string COD, string Dim, float Peso_, cLugares* LugarGuardar_):codigo(COD)
 {
     Nombre = Nom_;
@@ -27,7 +32,7 @@ cEquipoMedico::~cEquipoMedico()
 {
 }
 
-Estado cEquipoMedico::ChequearEstado()
+cEstado cEquipoMedico::ChequearEstado()
 {
     return _Estado;
 }

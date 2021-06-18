@@ -24,6 +24,11 @@ bool cLugares::VerificarLocalizado()
     }
 }
 
+string cLugares::getclave()
+{
+    return Nombre;
+}
+
 
 
 string cLugares::To_String()

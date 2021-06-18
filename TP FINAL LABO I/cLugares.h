@@ -14,15 +14,18 @@ public:
 	cLugares(string nom_, string pabellon_, int piso_);
 	~cLugares();
 	bool VerificarLocalizado();
+	string getclave();
 
 	string To_String();
 	void Imprimir();
 
 };
-
+/*
 //DEBE IR ESTO ACA??
 ostream& operator << (ostream& out, cLugares& lugar)
 {
-	lugar.Imprimir();
+	out << lugar.To_String();
+	return out;
 }
 
+*/

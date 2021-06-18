@@ -6,23 +6,33 @@ class cRespirador :  public cEquipoMedico
 	float Flujo, FlujoConfigurado, FlujoSalida;
 
 public:
-	cRespirador(string Nom_, const string COD, string Dim, float Peso);
+	cRespirador(string Nom_, const string COD, string Dim, float Peso, cLugares* Lugar_Guardar_);
 	~cRespirador();
 
-	void Imrpimir();
+	void Imprimir();
 	string To_String();
 
 	void MantenimientoPreventivo();
-	void MatenimientoCorrectivo();
-	string GetClave();
-};
+	void MantenimientoCorrectivo();
+	void MantenimientoCorrectivo(float flujo_);
 
+
+	void ConfigurarFlujo(float aux_);
+};
+/*
 istream& operator>>(istream& in, cRespirador& Respirador)
 {
-
+	float aux;
+	cin >> aux;
+	Respirador.ConfigurarFlujo(aux);
+	return in;
 }
 
 ostream& operator<<(ostream& out, cRespirador& Respirador)
 {
 	Respirador.Imprimir();
+
+	out << Respirador.To_String();
+	return out;
 }
+*/
