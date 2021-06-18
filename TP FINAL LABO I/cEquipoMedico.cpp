@@ -25,7 +25,7 @@ cEquipoMedico::cEquipoMedico(string Nom_, const string COD, string Dim, float Pe
 
     //COMO COMIENZA EL DIA SE LOS LUGARES DEBEN SER LOS MISMOS
     Lugar_Actual = LugarGuardar_;
-   
+    Calendario = new cListaT<cCalendario>();
 }
 
 cEquipoMedico::~cEquipoMedico()

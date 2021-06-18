@@ -6,11 +6,11 @@ using namespace std;
 
 class cCalendario
 {
-	tm* ListaFechaMantenimiento;
+	int dia, mes, anio;
+
 
 public:
-	cCalendario();
+	cCalendario(int dia_, int mes_, int anio_);
 	~cCalendario();
-	void Imprimir();
 };
 

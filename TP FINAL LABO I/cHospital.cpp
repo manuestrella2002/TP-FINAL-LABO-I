@@ -24,3 +24,24 @@ void cHospital::ContarFueraServicio()
     Cant_Equip_F_Serv=ListaEquipos->ContarEquipF_Serv();
 }
 
+void cHospital::HacerMantenimiento()
+{
+    time_t t = time(NULL);
+    tm* timePtr = localtime(&t);
+   /*
+        for (int i = 0; i < ListaEquipos->getCA(); i++)
+        {
+            for (int a = 0; a < (ListaEquipos[i])->Calendario->getCA(); a++)
+            {
+
+            }
+            if (timePtr->tm_mday==(ListaEquipos[i])->Calendario[i]->getdia())
+            {
+
+            }
+            //PREGUNAT COMO SE USA OPERADOR CORCHETES
+            (ListaEquipos->getItem(i))->MantenimientoPreventivo();
+        }
+   */
+}
+

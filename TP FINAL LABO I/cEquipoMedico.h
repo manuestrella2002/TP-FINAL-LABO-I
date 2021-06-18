@@ -4,6 +4,7 @@
 #include <iostream>
 #include"cEnum.h"
 #include"cReparacion.h"
+#include"cListaT.h"
 
 
 using namespace std;
@@ -16,7 +17,7 @@ protected:
 	//CON 3 VARIABLES DENTRO DE DIA, MES, AÑO
 	//2)AGREGARLE MAS COSAS A LA CLASE CALENDARIO PARA AGREGARLE COSAS DENTRO DE LA VARIABLE
 	
-	cCalendario* calendario;
+	
 	
 	static int Cant_Total_Equipos;
 	const string codigo;
@@ -28,6 +29,7 @@ protected:
 	cLugares *Lugar_Actual, *Lugar_Guardar;
 
 public:
+	cListaT<cCalendario>* Calendario;
 	cEquipoMedico(string Nom_, const string COD, string Dim, float Peso_, cLugares* LugarGuardar_);
 	~cEquipoMedico();
 

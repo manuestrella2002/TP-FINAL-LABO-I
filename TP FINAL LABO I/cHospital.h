@@ -15,16 +15,18 @@ protected:
 	float CostosEquiposMant, CuentaCorriente;
 	string Direccion, Nombre;
 	unsigned int Cant_Equip_F_Serv;
-	cListaT <cReparacion>* ListaReparaciones;
 
 public:
 	cListaDer* ListaEquipos;
 	cListaT <cLugares>* ListaLugares;
+	cListaT <cReparacion>* ListaReparaciones;
+
 
 	cHospital(string nom_, string direc_, float cuenta);
 	~cHospital();
 
 	void ContarFueraServicio();
+	void HacerMantenimiento();
 
 	string To_String();
 	void Imprimir();

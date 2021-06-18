@@ -40,7 +40,7 @@ public:
 	unsigned int getCA();
 	unsigned int getTAM();
 
-	T* operator[](unsigned int pos);
+	 T* operator[](unsigned int pos);
 
 	void operator + (T* item);
 
