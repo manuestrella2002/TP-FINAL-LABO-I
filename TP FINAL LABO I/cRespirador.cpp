@@ -75,3 +75,39 @@ void cRespirador::ConfigurarFlujo(float aux_)
 {
 	FlujoConfigurado = aux_;
 }
+
+istream& operator>>(istream& in, cRespirador& Respirador)
+{
+	// TODO: insert return statement here
+}
+
+ostream& operator<<(ostream& out, cRespirador& Respirador)
+{
+	string aux1, aux2;
+	if (Respirador.Alarma_Alta_Presion == true)
+	{
+		aux1 = "Alarma de presion alta ";
+	}
+	if (Respirador.Alarma_Baja_Presion)
+	{
+		aux2 = "Alarma de presion baja";
+	}
+	cout << "\nRESPIRADOR\n Nombre" << Respirador.Nombre << endl;
+	cout << Respirador.Descripcion << endl;
+	cout << "Codigo: " << Respirador.codigo << endl;
+	cout << "Dimensiones: " << Respirador.Dimension << endl;
+	cout << "Peso: " << Respirador.Peso << endl;
+	cout << "Lugar actual: " << Respirador.Lugar_Actual << "\t Lugar de guardado: " << Respirador.Lugar_Guardar << endl;
+	if (Respirador.Alarma_Alta_Presion == true)
+	{
+		cout << "Alarma de presion alta " << endl;
+	}
+	else if (Respirador.Alarma_Baja_Presion)
+	{
+		cout << "Alarma de presion baja" << endl;
+	}
+	cout << "Flujo: " << Respirador.Flujo << endl;
+	cout << "Flujo configurado: " << Respirador.FlujoConfigurado << endl;
+	cout << "Flujo de salida: " << Respirador.FlujoSalida << endl;
+	cout << "Fecha de ultimo mantenimiento: " << Respirador.Fecha_ult_Mant << endl;
+}

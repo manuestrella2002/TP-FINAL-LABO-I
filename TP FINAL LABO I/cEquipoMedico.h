@@ -2,6 +2,7 @@
 #include "cCalendario.h"
 #include"cLugares.h"
 #include"cReparacion.h"
+#include <iostream>
 
 
 
@@ -42,16 +43,8 @@ public:
 	cLugares* getLugarAC();
 	cLugares* getLugarGU();
 	string getclave();
-};
-/*
-istream& operator>>(istream& in, cEquipoMedico& Equipo)
-{
-	return in;
-}
 
-ostream& operator<<(ostream& out, cEquipoMedico& Equipo)
-{
-	out << Equipo.To_String();
-	return out;
-}
-*/
+	friend istream& operator>>(istream& in, cEquipoMedico& Equipo);
+	friend ostream& operator<<(ostream& out, const cEquipoMedico& Equipo); 
+	//no se puede hacer virtual asi que no se como se podria hacer 
+};

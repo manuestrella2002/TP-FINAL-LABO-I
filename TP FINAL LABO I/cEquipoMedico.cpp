@@ -53,3 +53,17 @@ void cEquipoMedico::ImprimirAlerta()
 {
     cout << "\nEl equipo"<< Nombre <<"no se encuentra en el lugar a guardar." << endl;
 }
+
+istream& operator>>(istream& in, cEquipoMedico& Equipo)
+{ //depende lo que querramos agregar 
+
+    in >> Equipo;
+    return in;
+}
+
+ostream& operator<<(ostream& out, const cEquipoMedico& Equipo)
+{
+    cout << Equipo.Cant_Total_Equipos << endl;
+    return out;
+
+}

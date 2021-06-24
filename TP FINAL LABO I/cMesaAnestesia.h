@@ -20,17 +20,6 @@ public:
 	void MantenimientoCorrectivo();
 	void MantenimientoCorrectivo(float Volumen_);
 	
+	friend istream& operator>>(istream& in, cMesaAnestesia& Mesa);
+	friend ostream& operator<<(ostream& out, cMesaAnestesia& Mesa);
 };
-/*
-istream& operator>>(istream& in, cMesaAnestesia& Mesa)
-{
-	return in;
-}
-
-ostream& operator<<(ostream& out, cMesaAnestesia& Mesa)
-{
-	Mesa.Imprimir();
-	out << Mesa.To_String();
-	return out;
-}
-*/

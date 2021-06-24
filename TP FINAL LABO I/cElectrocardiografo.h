@@ -14,18 +14,8 @@ public:
 
 	void MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones);
 	void MantenimientoCorrectivo();
+
+	friend istream& operator>>(istream& in, cElectrocardiografo& Equipo);
+	friend ostream& operator<<(ostream& out, const cElectrocardiografo& Equipo);
 	
 };
-/*
-istream& operator>>(istream& in, cElectrocardiografo& Electro)
-{
-	return in;
-}
-
-ostream& operator<<(ostream& out, cElectrocardiografo& Electro)
-{
-	Electro.Imprimir();
-	out << Electro.To_String();
-	return out;
-}
-*/

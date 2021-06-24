@@ -98,3 +98,29 @@ void cMesaAnestesia::MantenimientoCorrectivo(float Volumen_)
 	_Estado = cEstado::EN_ESPERA;
 }
 
+istream& operator>>(istream& in, cMesaAnestesia& Mesa)
+{
+	// TODO: insert return statement here
+}
+
+ostream& operator<<(ostream& out, cMesaAnestesia& Mesa)
+{
+	
+	cout << "\nMESA DE ANESTESIA\n Nombre" << Mesa.Nombre << endl;
+	cout << Mesa.Descripcion << endl;
+	cout << "Codigo: " << Mesa.codigo << endl;
+	cout << "Dimensiones: " << Mesa.Dimension << endl;
+	cout << "Peso: " << Mesa.Peso << endl;
+	cout << "Lugar actual: " << Mesa.Lugar_Actual << "\t Lugar de guardado: " << Mesa.Lugar_Guardar << endl;
+	cout << "Nivel del sueño: " << Mesa.Nivel_Sueño << endl;
+	cout << "Volumen de flujo: " << Mesa.Volumen_Flujo << endl;
+	if (Mesa.Alarma_Alta_FrecCard == true)
+	{
+		cout << "La frecuencia cardiaca es alta " << endl;
+	}
+	else if (Mesa.Alarma_Baja_FrecCard == true)
+	{
+		cout << "La frecuencia cardiaca es baja " << endl;
+	}
+	cout << "Fecha de ultimo mantenimiento: " << Mesa.Fecha_ult_Mant << endl;
+}

@@ -19,21 +19,7 @@ public:
 
 
 	void ConfigurarFlujo(float aux_);
+
+	friend istream& operator>>(istream& in, cRespirador& Respirador);
+	friend ostream& operator<<(ostream& out, cRespirador& Respirador);
 };
-/*
-istream& operator>>(istream& in, cRespirador& Respirador)
-{
-	float aux;
-	cin >> aux;
-	Respirador.ConfigurarFlujo(aux);
-	return in;
-}
-
-ostream& operator<<(ostream& out, cRespirador& Respirador)
-{
-	Respirador.Imprimir();
-
-	out << Respirador.To_String();
-	return out;
-}
-*/

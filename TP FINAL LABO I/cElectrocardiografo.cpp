@@ -55,3 +55,46 @@ void cElectrocardiografo::MantenimientoCorrectivo()
 	_Estado = cEstado::EN_ESPERA;
 
 }
+
+istream& operator>>(istream& in, cElectrocardiografo& Equipo)
+{
+	// TODO: insert return statement here
+}
+
+ostream& operator<<(ostream& out, const cElectrocardiografo& Equipo)
+{
+	string auxVF, auxVL, auxVR;
+	if (Equipo.Der_aVF == true)
+	{
+		auxVF = "Derivada aVF: potencial absoluto";
+	}
+	else if (Equipo.Der_aVL == true)
+	{
+		auxVL = "Derivada aVL: potencial absoluto";
+	}
+	else if (Equipo.Der_aVR == true)
+	{
+		auxVR = "Derivada aVR: potencial absoluto";
+	}
+
+	cout << "\nELECTROCARDIOGRAFO\n Nombre" << Equipo.Nombre << endl;
+	cout << Equipo.Descripcion << endl;
+	cout << "Codigo: " << Equipo.codigo << endl;
+	cout << "Dimensiones: " << Equipo.Dimension << endl;
+	cout << "Peso: " << Equipo.Peso << endl;
+	cout << "Lugar actual: " << Equipo.Lugar_Actual << "\t Lugar de guardado: " << Equipo.Lugar_Guardar << endl;
+	if (Equipo.Der_aVF == true)//pueden pasar todos a la vez
+	{
+		cout << "Derivada aVF: potencial absoluto" << endl;
+	}
+	if (Equipo.Der_aVL == true)
+	{
+		cout << "Derivada aVL: potencial absoluto" << endl;
+	}
+	if (Equipo.Der_aVR == true)
+	{
+		cout << "Derivada aVR: potencial absoluto" << endl;
+	}
+	cout << "Fecha de ultimo mantenimiento: " << Equipo.Fecha_ult_Mant << endl;
+
+ }
