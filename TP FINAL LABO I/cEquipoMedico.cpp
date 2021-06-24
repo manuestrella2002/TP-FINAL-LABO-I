@@ -1,10 +1,21 @@
 #include "cEquipoMedico.h"
 
+
 int cEquipoMedico::Cant_Total_Equipos = 0;
 
 bool cEquipoMedico::VerificarLugares()
 {
     return false;
+}
+
+cLugares* cEquipoMedico::getLugarAC()
+{
+    return Lugar_Actual;
+}
+
+cLugares* cEquipoMedico::getLugarGU()
+{
+    return Lugar_Guardar;
 }
 
 string cEquipoMedico::getclave()
@@ -25,11 +36,12 @@ cEquipoMedico::cEquipoMedico(string Nom_, const string COD, string Dim, float Pe
 
     //COMO COMIENZA EL DIA SE LOS LUGARES DEBEN SER LOS MISMOS
     Lugar_Actual = LugarGuardar_;
-    Calendario = new cListaT<cCalendario>();
+    Calendario = new cCalendario();
 }
 
 cEquipoMedico::~cEquipoMedico()
 {
+    Calendario->~cCalendario();
 }
 
 cEstado cEquipoMedico::ChequearEstado()

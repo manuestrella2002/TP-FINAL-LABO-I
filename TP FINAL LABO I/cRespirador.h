@@ -1,5 +1,6 @@
 #pragma once
 #include "cEquipoMedico.h"
+class cHospital;
 class cRespirador :  public cEquipoMedico
 {
 	bool Alarma_Alta_Presion, Alarma_Baja_Presion;
@@ -12,7 +13,7 @@ public:
 	void Imprimir();
 	string To_String();
 
-	void MantenimientoPreventivo();
+	void MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones);
 	void MantenimientoCorrectivo();
 	void MantenimientoCorrectivo(float flujo_);
 

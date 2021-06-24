@@ -18,10 +18,7 @@ bool cLugares::VerificarLocalizado()
     {
         return true;
     }
-    else
-    {
-        false;
-    }
+  return  false;
 }
 
 string cLugares::getclave()

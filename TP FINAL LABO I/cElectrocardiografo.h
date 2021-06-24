@@ -1,6 +1,6 @@
 #pragma once
 #include "cEquipoMedico.h"
-
+class cHospital;
 class cElectrocardiografo : public cEquipoMedico
 {
 	bool Der_aVF, Der_aVL, Der_aVR;
@@ -12,8 +12,9 @@ public:
 	void Imprimir();
 	string To_String();
 
-	void MantenimientoPreventivo();
+	void MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones);
 	void MantenimientoCorrectivo();
+	
 };
 /*
 istream& operator>>(istream& in, cElectrocardiografo& Electro)

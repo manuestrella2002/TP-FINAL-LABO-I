@@ -14,6 +14,7 @@ public:
 	cReparacion(string Cod_, float precio_, cProblema probl);
 	~cReparacion();
 
+	string getclave();
 	string To_String();
 	void Imprimir();
 

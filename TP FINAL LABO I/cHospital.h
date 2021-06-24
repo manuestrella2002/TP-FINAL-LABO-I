@@ -1,12 +1,8 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include"cLugares.h"
-#include"cReparacion.h"
 #include"cListaDer.h"
-#include"cElectrocardiografo.h"
-#include"cMesaAnestesia.h"
-#include"cRespirador.h"
+
 using namespace std;
 
 class cHospital
@@ -15,6 +11,7 @@ protected:
 	float CostosEquiposMant, CuentaCorriente;
 	string Direccion, Nombre;
 	unsigned int Cant_Equip_F_Serv;
+
 
 public:
 	cListaDer* ListaEquipos;
@@ -27,6 +24,7 @@ public:
 
 	void ContarFueraServicio();
 	void HacerMantenimiento();
+	void ListarEquiposFueraLugar();
 
 	string To_String();
 	void Imprimir();

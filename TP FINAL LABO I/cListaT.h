@@ -1,9 +1,10 @@
 #pragma once
 #define NMAX 150
 
-#include <string>
-#include "cHospital.h"
-#include"cEnum.h"
+#include"cElectrocardiografo.h"
+#include"cMesaAnestesia.h"
+#include"cRespirador.h"
+
 
 using namespace std;
 
@@ -218,7 +219,7 @@ T* cListaT<T>::operator[](unsigned int pos)
 }
 
 template<class T>
-inline void cListaT<T>::operator+(T* item)
+ void cListaT<T>::operator+(T* item)
 {
 	AgregarItem(item);
 }

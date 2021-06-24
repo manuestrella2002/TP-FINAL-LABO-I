@@ -48,12 +48,12 @@
     <ClInclude Include="cEnum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cFecha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cHospital.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cCalendario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cLugares.cpp">
@@ -78,6 +78,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cEnum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cListaDer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cFecha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

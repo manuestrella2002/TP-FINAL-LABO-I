@@ -1,4 +1,5 @@
 #include "cElectrocardiografo.h"
+#include"cHospital.h"
 
 cElectrocardiografo::cElectrocardiografo(string Nom_, const string COD, string Dim, float Peso, cLugares* LugarGuardar_):cEquipoMedico(Nom_,COD,Dim,Peso,LugarGuardar_)
 {
@@ -21,7 +22,7 @@ string cElectrocardiografo::To_String()
 	return string();
 }
 
-void cElectrocardiografo::MantenimientoPreventivo()
+void cElectrocardiografo::MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones)
 {
 	try
 	{
@@ -29,6 +30,11 @@ void cElectrocardiografo::MantenimientoPreventivo()
 		{
 			throw new exception("\nEl sensor no funciona. Se lo cambia.");
 			_Estado = cEstado::FUERA_SERVICIO;
+			cReparacion* Reparacion = new cReparacion(getclave(), 2000, cProblema::ELECTRICO);
+			
+			ListaReparaciones->AgregarItem(Reparacion);
+
+			delete Reparacion;
 		}
 	}
 	catch (const std::exception& e)
@@ -47,10 +53,5 @@ void cElectrocardiografo::MantenimientoCorrectivo()
 	Der_aVL = true;
 	Der_aVR = true;
 	_Estado = cEstado::EN_ESPERA;
-	
-	int aux = (rand() % 4000) + 1000;
-	cReparacion* Reparacion1 = new cReparacion(to_string(aux), 5000, cProblema::ELECTRICO);
-	
-
 
 }

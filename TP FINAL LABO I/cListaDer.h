@@ -9,42 +9,7 @@ public:
 	void RastrearEquipo();
 	int ContarEquipF_Serv();
 
+	cEquipoMedico* operator[](unsigned int pos);
 
 
 };
-inline cListaDer::cListaDer(unsigned int TAM) :cListaT(TAM)
-{
-}
-
-inline cListaDer::~cListaDer()
-{
-}
-
-
-inline void cListaDer::RastrearEquipo()
-{
-	
-	for (int i = 0; i < CA; i++)
-	{
-		if (vector[i]->VerificarLugares()==false)
-		{
-			vector[i]->ImprimirAlerta();
-		}
-	}
-	
-}
-
-inline int cListaDer::ContarEquipF_Serv()
-{
-	int cont = 0;
-	
-	for (int i = 0; i < CA; i++)
-	{
-		if (vector[i]->ChequearEstado() == cEstado::FUERA_SERVICIO)
-		{
-			cont++;
-		}
-
-	}
-	return cont;
-}

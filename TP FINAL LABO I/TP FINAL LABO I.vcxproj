@@ -144,6 +144,7 @@
     <ClInclude Include="cElectrocardiografo.h" />
     <ClInclude Include="cEnum.h" />
     <ClInclude Include="cEquipoMedico.h" />
+    <ClInclude Include="cFecha.h" />
     <ClInclude Include="cHospital.h" />
     <ClInclude Include="cListaDer.h" />
     <ClInclude Include="cListaT.h" />
@@ -153,11 +154,12 @@
     <ClInclude Include="cRespirador.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cCalendario.cpp" />
     <ClCompile Include="cElectrocardiografo.cpp" />
     <ClCompile Include="cEnum.cpp" />
     <ClCompile Include="cEquipoMedico.cpp" />
+    <ClCompile Include="cFecha.cpp" />
     <ClCompile Include="cHospital.cpp" />
+    <ClCompile Include="cListaDer.cpp" />
     <ClCompile Include="cLugares.cpp" />
     <ClCompile Include="cMesaAnestesia.cpp" />
     <ClCompile Include="cReparacion.cpp" />

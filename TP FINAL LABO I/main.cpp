@@ -9,13 +9,11 @@
 using namespace std;
 int main()
 {
-
-
 	cHospital* Hospital = new cHospital("Favaloro", "Entre Rios 2550", 10000000);
 
-	cCalendario* Fecha1 = new cCalendario(10, 6, 2021);
-	cCalendario* Fecha2 = new cCalendario(10, 9, 2021);
-	cCalendario* Fecha3 = new cCalendario(10, 12, 2021);
+	cFecha* Fecha1 = new cFecha(10, 6, 2021);
+	cFecha* Fecha2 = new cFecha(10, 9, 2021);
+	cFecha* Fecha3 = new cFecha(10, 12, 2021);
 
 	
 	cLugares* Consultorio = new cLugares("Consultorio", "A", 2);
@@ -44,15 +42,16 @@ int main()
 	(*Respirador1->Calendario) + Fecha2;
 	(*Respirador1->Calendario) + Fecha3;
 
-	//Hospital.HacerMantenimiento();
+	
 
 
 	//la repacion se crea cuando hacemos el mantenimiento y cumple con los requisitos para arreglos
+	/*
 	(*Hospital->ListaReparaciones) + Reparacion1;
 	(*Hospital->ListaReparaciones) + Reparacion2;
 	(*Hospital->ListaReparaciones) + Reparacion3;
 	(*Hospital->ListaReparaciones) + Reparacion4;
-
+	*/
 
 	//agregamos a la lista con la sobrecarga +
 	(*Hospital->ListaLugares) + Consultorio;
@@ -63,10 +62,21 @@ int main()
 	(*Hospital->ListaEquipos) + Electro1;
 	(*Hospital->ListaEquipos) + Mesa1;
 	(*Hospital->ListaEquipos) + Respirador1;
+	/*------------------------------------------------------------------------------------------*/
+	Hospital->HacerMantenimiento();
 
 	
 
-	//(Hospital->ListaEquipos->BuscarItem(Electro1->getclave()))->MantenimientoPreventivo();
+
+
+
+
+
+
+
+
+
+
 
 	/*
 	Electro1->Imprimir();
@@ -79,6 +89,8 @@ int main()
 		cout << Consultorio;
 
 		//Vamos a controlar entorno a cHospital 
+
+		Hospital->ListarEquiposFueraLugar();
 
 	return 0;
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "cEquipoMedico.h"
+class cHospital;
 class cMesaAnestesia : public cEquipoMedico
 {
 	bool Alarma_Alta_FrecCard, Alarma_Baja_FrecCard;
@@ -13,7 +14,7 @@ public:
 	void Imprimir();
 	string To_String();
 
-	void MantenimientoPreventivo();
+	void MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones);
 	//EXISTEN TRES TIPOS DE PROBLEMA DEPENDE DE CUAL SEA
 	void MantenimientoCorrectivo(int nivel_);
 	void MantenimientoCorrectivo();

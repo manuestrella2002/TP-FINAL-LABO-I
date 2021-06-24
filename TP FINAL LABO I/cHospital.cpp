@@ -28,20 +28,33 @@ void cHospital::HacerMantenimiento()
 {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
-   /*
-        for (int i = 0; i < ListaEquipos->getCA(); i++)
+   
+     for (int i = 0; i < ListaEquipos->getCA(); i++)
+     {
+            for (int a = 0; a < (*ListaEquipos)[i]->Calendario->getCA(); a++)
+            {
+                if (timePtr->tm_mday == (*ListaEquipos)[i]->Calendario->getItem(a)->getdia() && timePtr->tm_mon+1 == (*ListaEquipos)[i]->Calendario->getItem(a)->getdia())
+                {
+                    (*ListaEquipos)[i]->MantenimientoPreventivo(ListaReparaciones);
+                }
+            }
+     }
+   
+}
+
+void cHospital::ListarEquiposFueraLugar()
+{
+    cout << "ALERTA EQUIPO FUERA DE LUGAR" << endl;
+
+    for (int i = 0; i < ListaEquipos->getCA(); i++)
+    {
+        if ((*ListaEquipos)[i]->VerificarLugares()==false)
         {
-            for (int a = 0; a < (ListaEquipos[i])->Calendario->getCA(); a++)
-            {
-
-            }
-            if (timePtr->tm_mday==(ListaEquipos[i])->Calendario[i]->getdia())
-            {
-
-            }
-            //PREGUNAT COMO SE USA OPERADOR CORCHETES
-            (ListaEquipos->getItem(i))->MantenimientoPreventivo();
+            cout << "\nCodigo:" + (*ListaEquipos)[i]->getclave() + "\nLugar Actual:"
+                + (*ListaEquipos)[i]->getLugarAC()->getclave()
+                + "\nLugar Guardar:" + (*ListaEquipos)[i]->getLugarGU()->getclave() << endl;
         }
-   */
+    }
+
 }
 

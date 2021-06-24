@@ -1,5 +1,5 @@
 #include "cMesaAnestesia.h"
-
+#include"cHospital.h"
 cMesaAnestesia::cMesaAnestesia(string Nom_, const string COD, string Dim, float Peso, cLugares* Lugar_Guardar_):cEquipoMedico(Nom_,COD,Dim,Peso,Lugar_Guardar_)
 {
 	//SI LAS ALARMAS SON TRUE ES QUE FUNCIONAN
@@ -22,7 +22,7 @@ string cMesaAnestesia::To_String()
 	return string();
 }
 
-void cMesaAnestesia::MantenimientoPreventivo()
+void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaciones)
 {
 	try
 	{
@@ -30,6 +30,9 @@ void cMesaAnestesia::MantenimientoPreventivo()
 		{
 			throw new exception("\nLas alarmas no funicionan. Se las cambian");
 			_Estado = cEstado::FUERA_SERVICIO;
+			cReparacion* Reparacion = new cReparacion(getclave(), 5000, cProblema::ELECTRICO);
+			ListaReparaciones->AgregarItem(Reparacion);
+			delete Reparacion;
 		}
 	}
 	catch (const std::exception& ex1)
@@ -44,6 +47,9 @@ void cMesaAnestesia::MantenimientoPreventivo()
 		{
 			throw new exception("\nEl nivel de sueño es muy bajo.");
 			_Estado = cEstado::FUERA_SERVICIO;
+			cReparacion* Reparacion = new cReparacion(getclave(), 1000, cProblema::ESPECIALIZADO);
+			ListaReparaciones->AgregarItem(Reparacion);
+			delete Reparacion;
 		}
 	}
 	catch (const std::exception& ex2)
@@ -58,6 +64,10 @@ void cMesaAnestesia::MantenimientoPreventivo()
 		{
 			throw new exception("\nExiste un taponamiento en la maquina. Flujo 0");
 			_Estado = cEstado::FUERA_SERVICIO;
+			cReparacion* Reparacion = new cReparacion(getclave(), 2000, cProblema::MECANICO);
+			ListaReparaciones->AgregarItem(Reparacion);
+			delete Reparacion;
+
 		}
 
 	}

@@ -10,3 +10,8 @@ cReparacion::cReparacion(string Cod_, float precio_, cProblema probl)
 cReparacion::~cReparacion()
 {
 }
+
+string cReparacion::getclave()
+{
+	return Codigo;
+}

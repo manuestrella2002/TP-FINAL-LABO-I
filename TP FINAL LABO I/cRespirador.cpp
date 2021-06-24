@@ -1,5 +1,5 @@
 #include "cRespirador.h"
-
+#include"cHospital.h"
 cRespirador::cRespirador(string Nom_, const string COD, string Dim, float Peso, cLugares* Lugar_Guardar_) :cEquipoMedico(Nom_, COD, Dim, Peso, Lugar_Guardar_)
 {
 	Alarma_Alta_Presion = true;
@@ -22,7 +22,7 @@ string cRespirador::To_String()
 	return string();
 }
 
-void cRespirador::MantenimientoPreventivo()
+void cRespirador::MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones)
 {
 	try
 	{
@@ -30,6 +30,10 @@ void cRespirador::MantenimientoPreventivo()
 		{
 			throw new exception("Las alarmas no funcionan");
 			_Estado = cEstado::FUERA_SERVICIO;
+
+			cReparacion* Reparacion = new cReparacion(getclave(), 5000, cProblema::ELECTRICO);
+			ListaReparaciones->AgregarItem(Reparacion);
+			delete Reparacion;
 		}
 	}
 	catch (const std::exception& ex1)
