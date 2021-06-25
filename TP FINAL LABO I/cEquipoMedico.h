@@ -40,6 +40,8 @@ public:
 	cLugares* getLugarGU();
 	string getclave();
 
+	void setLugarActual(cLugares* aux);
+
 	friend istream& operator>>(istream& in, cEquipoMedico& Equipo);
 	friend ostream& operator<<(ostream& out, const cEquipoMedico& Equipo); 
 	//no se puede hacer virtual asi que no se como se podria hacer 

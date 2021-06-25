@@ -61,6 +61,11 @@ void cHospital::ListarEquiposFueraLugar()
 
 }
 
+void cHospital::MoverEquipo(cEquipoMedico* Equipo, cLugares* aux)
+{
+    ListaEquipos->BuscarItem(Equipo->getclave())->setLugarActual(aux);
+}
+
 void cHospital::FinalizarDia()
 {
     for (int i = 0; i < ListaReparaciones->getCA(); i++)

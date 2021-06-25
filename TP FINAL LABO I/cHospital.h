@@ -26,6 +26,7 @@ public:
 	void ContarFueraServicio();
 	void HacerMantenimiento();
 	void ListarEquiposFueraLugar();
+	void MoverEquipo(cEquipoMedico* Equipo, cLugares* aux);
 
 	friend class cElectrocardiografo;
 	friend class cRespirador;

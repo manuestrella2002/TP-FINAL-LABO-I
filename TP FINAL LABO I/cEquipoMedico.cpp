@@ -28,6 +28,11 @@ string cEquipoMedico::getclave()
     return codigo;
 }
 
+void cEquipoMedico::setLugarActual(cLugares* aux)
+{
+    Lugar_Actual = aux;
+}
+
 cEquipoMedico::cEquipoMedico(string Nom_, const string COD, string Dim, float Peso_, cLugares* LugarGuardar_):codigo(COD)
 {
     Nombre = Nom_;

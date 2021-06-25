@@ -3,8 +3,8 @@
 cMesaAnestesia::cMesaAnestesia(string Nom_, const string COD, string Dim, float Peso, cLugares* Lugar_Guardar_):cEquipoMedico(Nom_,COD,Dim,Peso,Lugar_Guardar_)
 {
 	//SI LAS ALARMAS SON TRUE ES QUE FUNCIONAN
-	Alarma_Alta_FrecCard = false;
-	Alarma_Baja_FrecCard = false;
+	Alarma_Alta_FrecCard = true;
+	Alarma_Baja_FrecCard = true;
 	Nivel_Sueño = 100;
 	Volumen_Flujo = 100;
 }
@@ -12,6 +12,7 @@ cMesaAnestesia::cMesaAnestesia(string Nom_, const string COD, string Dim, float 
 cMesaAnestesia::~cMesaAnestesia()
 {
 }
+
 
 void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaciones)
 {
@@ -27,8 +28,7 @@ void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaci
 			
 			throw new exception ("\nLas alarmas no funicionan. Se las cambian");
 		}
-	}
-	catch (const std::exception& ex1)
+	}catch (const exception& ex1)
 	{
 		cout << ex1.what() << endl;
 		MantenimientoCorrectivo();

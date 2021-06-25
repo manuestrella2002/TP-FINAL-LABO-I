@@ -1,14 +1,18 @@
 #include<iostream>
 #include<string>
+#include<stdlib.h>
 
 #include "cHospital.h"
 #include "cElectrocardiografo.h"
 #include "cMesaAnestesia.h"
 #include "cRespirador.h"
 
+
+
 using namespace std;
 int main()
 {
+
 	cHospital* Hospital = new cHospital("Favaloro", "Entre Rios 2550", 10000000);
 
 	cFecha* Fecha1 = new cFecha(25, 6, 2021);
@@ -54,10 +58,18 @@ int main()
 	(*Hospital->ListaEquipos) + Respirador1;
 
 	/*------------------------------------------------------------------------------------------*/
+	Hospital->MoverEquipo(Electro1, Quirofano);
+	Hospital->MoverEquipo(Respirador1, Hemodinamia);
+
 	Hospital->ListaEquipos->RastrearEquipo();
-
+	
+	
+	
+	system("Pause");
+	system("cls");
 	Hospital->HacerMantenimiento();
-
+	system("Pause");
+	system("cls");
 	cin >> (*Electro1);
 	cin >> (*Mesa1);
 	cin >> (*Respirador1);
@@ -65,10 +77,18 @@ int main()
 	cout << (*Electro1);
 	cout << (*Mesa1);
 	cout << (*Respirador1);
+	system("Pause");
+	system("cls");
 
 	Consultorio->Imprimir();
+	system("Pause");
+	system("cls");
 	Anestesia->Imprimir();
+	system("Pause");
+	system("cls");
 	Hemodinamia->Imprimir();
+	system("Pause");
+	system("cls");
 	Quirofano->Imprimir();
 	
 
