@@ -29,12 +29,14 @@ void cHospital::HacerMantenimiento()
 {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
+    timePtr->tm_year += 1900;
+    timePtr->tm_mon += 1;
    
      for (int i = 0; i < ListaEquipos->getCA(); i++)
      {
             for (int a = 0; a < (*ListaEquipos)[i]->Calendario->getCA(); a++)
             {
-                if (timePtr->tm_mday == (*ListaEquipos)[i]->Calendario->getItem(a)->getdia() && timePtr->tm_mon+1 == (*ListaEquipos)[i]->Calendario->getItem(a)->getdia())
+                if (timePtr->tm_mday == (*ListaEquipos)[i]->Calendario->getItem(a)->getdia() && timePtr->tm_mon == (*ListaEquipos)[i]->Calendario->getItem(a)->getmes())
                 {
                     (*ListaEquipos)[i]->MantenimientoPreventivo(ListaReparaciones);
                 }
