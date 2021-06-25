@@ -15,6 +15,8 @@ public:
 	~cReparacion();
 
 	string getclave();
+	float GetPrecio();
+
 	string To_String();
 	void Imprimir();
 

@@ -5,7 +5,7 @@ using namespace std;
 
 class cLugares
 {
-	bool Localizado;
+	bool Localizado; //se usa para decir que el equipo fue encontrado efectivamente
 	string Nombre, Pabellon;
 	int Piso;
 
@@ -20,12 +20,3 @@ public:
 	void Imprimir();
 
 };
-/*
-//DEBE IR ESTO ACA??
-ostream& operator << (ostream& out, cLugares& lugar)
-{
-	out << lugar.To_String();
-	return out;
-}
-
-*/

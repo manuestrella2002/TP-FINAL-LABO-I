@@ -1,11 +1,16 @@
 #include "cEquipoMedico.h"
+#define MAX_NUM_OF_SECONDS (5*365*24*60*60)
+
 
 
 int cEquipoMedico::Cant_Total_Equipos = 0;
 
 bool cEquipoMedico::VerificarLugares()
 {
-    return false;
+    if (Lugar_Actual->getclave() == Lugar_Guardar->getclave())
+        return true;
+    else
+        return false;
 }
 
 cLugares* cEquipoMedico::getLugarAC()
@@ -28,9 +33,12 @@ cEquipoMedico::cEquipoMedico(string Nom_, const string COD, string Dim, float Pe
     Nombre = Nom_;
     Dimension = Dim;
     Peso = Peso_;
-    //USAR RANDOM ALGO ASI PARA INICIALIZAR LA FECHA EN ALGO
-    Fecha_ult_Mant = NULL;
-
+  //creamos la fecha de ultimo mantenimiento 
+        unsigned int now_seconds = (unsigned int)time(NULL);
+        unsigned int rand_seconds = (rand() * rand()) % (MAX_NUM_OF_SECONDS + 1);
+        time_t       rand_time = (time_t)(now_seconds - rand_seconds);
+        Fecha_ult_Mant = localtime(&rand_time);
+   
     Cant_Total_Equipos++;
     Lugar_Guardar = LugarGuardar_;
 

@@ -13,21 +13,13 @@ cMesaAnestesia::~cMesaAnestesia()
 {
 }
 
-void cMesaAnestesia::Imprimir()
-{
-}
-
-string cMesaAnestesia::To_String()
-{
-	return string();
-}
-
 void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaciones)
 {
 	try
 	{
 		if (Alarma_Alta_FrecCard == false || Alarma_Baja_FrecCard == false)
 		{
+			//si las alarmas no funcionan corecctamente hay que cambiarlas, se hace reparacion
 			throw new exception("\nLas alarmas no funicionan. Se las cambian");
 			_Estado = cEstado::FUERA_SERVICIO;
 			cReparacion* Reparacion = new cReparacion(getclave(), 5000, cProblema::ELECTRICO);
@@ -45,6 +37,7 @@ void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaci
 	{
 		if (Nivel_Sueño<=20)
 		{
+			//si el nivel de sueño es muy bajo entonces se debe reparar
 			throw new exception("\nEl nivel de sueño es muy bajo.");
 			_Estado = cEstado::FUERA_SERVICIO;
 			cReparacion* Reparacion = new cReparacion(getclave(), 1000, cProblema::ESPECIALIZADO);
@@ -62,6 +55,7 @@ void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaci
 	{
 		if (Volumen_Flujo== 0)
 		{
+			//el volumen no funciona bien, por lo que hay que repararlo 
 			throw new exception("\nExiste un taponamiento en la maquina. Flujo 0");
 			_Estado = cEstado::FUERA_SERVICIO;
 			cReparacion* Reparacion = new cReparacion(getclave(), 2000, cProblema::MECANICO);
@@ -81,12 +75,14 @@ void cMesaAnestesia::MantenimientoPreventivo(cListaT<cReparacion>* ListaReparaci
 
 void cMesaAnestesia::MantenimientoCorrectivo(int nivel_)
 {
+	//arregla si lo que funciona mal es el nivel del sueño
 	Nivel_Sueño = 100;
 	_Estado = cEstado::EN_ESPERA;
 }
 
 void cMesaAnestesia::MantenimientoCorrectivo()
 {
+	//arregla si las alarmas no funcionan como corresponde
 	Alarma_Alta_FrecCard = true;
 	Alarma_Baja_FrecCard = true;
 	_Estado = cEstado::EN_ESPERA;
@@ -94,13 +90,23 @@ void cMesaAnestesia::MantenimientoCorrectivo()
 
 void cMesaAnestesia::MantenimientoCorrectivo(float Volumen_)
 {
+	//pone el flujo de vuelta a la normalidad
 	Volumen_Flujo = 100;
 	_Estado = cEstado::EN_ESPERA;
 }
 
+void cMesaAnestesia::SetSueño(int sueño_)
+{
+	Nivel_Sueño = sueño_;
+}
+
 istream& operator>>(istream& in, cMesaAnestesia& Mesa)
 {
-	// TODO: insert return statement here
+	float aux;
+	cout << "Ingrese el nivel del sueño: " << endl;
+	in >> aux;
+	Mesa.SetSueño(aux);
+	return in;
 }
 
 ostream& operator<<(ostream& out, cMesaAnestesia& Mesa)
@@ -111,16 +117,16 @@ ostream& operator<<(ostream& out, cMesaAnestesia& Mesa)
 	cout << "Codigo: " << Mesa.codigo << endl;
 	cout << "Dimensiones: " << Mesa.Dimension << endl;
 	cout << "Peso: " << Mesa.Peso << endl;
-	cout << "Lugar actual: " << Mesa.Lugar_Actual << "\t Lugar de guardado: " << Mesa.Lugar_Guardar << endl;
+	cout << "Lugar actual: " << endl;
+	Mesa.Lugar_Actual->Imprimir();
+	cout << "\t Lugar de guardado: " << endl;
+	Mesa.Lugar_Guardar->Imprimir();
 	cout << "Nivel del sueño: " << Mesa.Nivel_Sueño << endl;
 	cout << "Volumen de flujo: " << Mesa.Volumen_Flujo << endl;
-	if (Mesa.Alarma_Alta_FrecCard == true)
+	if (Mesa.Alarma_Alta_FrecCard == true && Mesa.Alarma_Baja_FrecCard == true)
 	{
-		cout << "La frecuencia cardiaca es alta " << endl;
+		cout << "Las alarmas funcionan correctamente" << endl;
 	}
-	else if (Mesa.Alarma_Baja_FrecCard == true)
-	{
-		cout << "La frecuencia cardiaca es baja " << endl;
-	}
-	cout << "Fecha de ultimo mantenimiento: " << Mesa.Fecha_ult_Mant << endl;
+	cout << "Fecha de ultimo mantenimiento: " <<Mesa.Fecha_ult_Mant->tm_mday << "/" << Mesa.Fecha_ult_Mant->tm_mon << "/" << Mesa.Fecha_ult_Mant->tm_year << endl;
+	return out;
 }

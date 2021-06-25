@@ -8,26 +8,16 @@ cElectrocardiografo::cElectrocardiografo(string Nom_, const string COD, string D
 	Der_aVR = true;
 
 }
-
 cElectrocardiografo::~cElectrocardiografo()
 {
 }
-
-void cElectrocardiografo::Imprimir()
-{
-}
-
-string cElectrocardiografo::To_String()
-{
-	return string();
-}
-
 void cElectrocardiografo::MantenimientoPreventivo(cListaT <cReparacion>* ListaReparaciones)
 {
 	try
 	{
 		if (Der_aVF == false || Der_aVL == false || Der_aVR == false)
-		{
+		{ 
+			//alguno de los sensores no funciona, se debe arreglar 
 			throw new exception("\nEl sensor no funciona. Se lo cambia.");
 			_Estado = cEstado::FUERA_SERVICIO;
 			cReparacion* Reparacion = new cReparacion(getclave(), 2000, cProblema::ELECTRICO);
@@ -56,45 +46,36 @@ void cElectrocardiografo::MantenimientoCorrectivo()
 
 }
 
+void cElectrocardiografo::SetPeso(float peso_)
+{
+	Peso = peso_;
+}
+
 istream& operator>>(istream& in, cElectrocardiografo& Equipo)
 {
-	// TODO: insert return statement here
+	float aux;
+	cout << "Ingrese el peso: " << endl;
+	in >> aux;
+	Equipo.SetPeso(aux);
+	return in;
 }
 
 ostream& operator<<(ostream& out, const cElectrocardiografo& Equipo)
 {
-	string auxVF, auxVL, auxVR;
-	if (Equipo.Der_aVF == true)
-	{
-		auxVF = "Derivada aVF: potencial absoluto";
-	}
-	else if (Equipo.Der_aVL == true)
-	{
-		auxVL = "Derivada aVL: potencial absoluto";
-	}
-	else if (Equipo.Der_aVR == true)
-	{
-		auxVR = "Derivada aVR: potencial absoluto";
-	}
 
 	cout << "\nELECTROCARDIOGRAFO\n Nombre" << Equipo.Nombre << endl;
 	cout << Equipo.Descripcion << endl;
 	cout << "Codigo: " << Equipo.codigo << endl;
 	cout << "Dimensiones: " << Equipo.Dimension << endl;
 	cout << "Peso: " << Equipo.Peso << endl;
-	cout << "Lugar actual: " << Equipo.Lugar_Actual << "\t Lugar de guardado: " << Equipo.Lugar_Guardar << endl;
-	if (Equipo.Der_aVF == true)//pueden pasar todos a la vez
+	cout << "Lugar actual: " << endl;
+	Equipo.Lugar_Actual->Imprimir();
+	cout << "\t Lugar de guardado: " << endl;
+	Equipo.Lugar_Guardar->Imprimir();
+	if (Equipo.Der_aVF == true && Equipo.Der_aVL == true && Equipo.Der_aVR == true)//pueden pasar todos a la vez
 	{
-		cout << "Derivada aVF: potencial absoluto" << endl;
+		cout << "El electrocardiografo funciona correctamente" << endl;
 	}
-	if (Equipo.Der_aVL == true)
-	{
-		cout << "Derivada aVL: potencial absoluto" << endl;
-	}
-	if (Equipo.Der_aVR == true)
-	{
-		cout << "Derivada aVR: potencial absoluto" << endl;
-	}
-	cout << "Fecha de ultimo mantenimiento: " << Equipo.Fecha_ult_Mant << endl;
-
+	cout << "Fecha de ultimo mantenimiento: " << Equipo.Fecha_ult_Mant->tm_mday << "/" << Equipo.Fecha_ult_Mant->tm_mon << "/" << Equipo.Fecha_ult_Mant->tm_year << endl;
+	return out;
  }

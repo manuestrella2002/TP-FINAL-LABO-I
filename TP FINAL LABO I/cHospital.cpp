@@ -7,8 +7,6 @@ cHospital::cHospital(string nom_, string direc_, float cuenta)
     CuentaCorriente = cuenta;
     CostosEquiposMant = 0;
     Cant_Equip_F_Serv = 0;
-
-    //DEBEMOS DESTRUIR EN EL DESTRUCTOR LAS LISTAS??
     ListaEquipos = new cListaDer();
     ListaLugares = new cListaT<cLugares>();
     ListaReparaciones = new cListaT<cReparacion>();
@@ -17,6 +15,9 @@ cHospital::cHospital(string nom_, string direc_, float cuenta)
 
 cHospital::~cHospital()
 {
+    delete ListaEquipos;
+    delete ListaLugares;
+    delete ListaReparaciones;
 }
 
 void cHospital::ContarFueraServicio()
@@ -56,5 +57,24 @@ void cHospital::ListarEquiposFueraLugar()
         }
     }
 
+}
+
+void cHospital::FinalizarDia()
+{
+    for (int i = 0; i < ListaReparaciones->getCA(); i++)
+    {
+        CostosEquiposMant += (*ListaReparaciones)[i]->GetPrecio();
+    }
+    if (Cant_Equip_F_Serv > 5 || CostosEquiposMant > 2000 )
+    {
+        for (int i = 0; i < ListaEquipos->getCA(); i++)
+        {
+            if ((*ListaEquipos)[i]->ChequearEstado() == cEstado::FUERA_SERVICIO)
+            {
+                (*ListaEquipos)[i]->MantenimientoCorrectivo();
+            }
+        }
+    }
+    ListarEquiposFueraLugar();
 }
 

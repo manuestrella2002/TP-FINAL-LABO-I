@@ -1,10 +1,7 @@
 #pragma once
 #define NMAX 150
-
-#include"cElectrocardiografo.h"
-#include"cMesaAnestesia.h"
-#include"cRespirador.h"
-
+#include<iostream>
+#include<string>
 
 using namespace std;
 

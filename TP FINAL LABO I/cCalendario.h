@@ -5,7 +5,7 @@
 #define N 150
 using namespace std;
 
-
+//creamos una lista de fechas para las fechas de mantenimiento
 
 class cCalendario
 {

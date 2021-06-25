@@ -30,9 +30,12 @@ string cLugares::getclave()
 
 string cLugares::To_String()
 {
-    return string();
+    string cadena = "\nNombre " + Nombre + "\nPabellon: " + Pabellon +
+        "\nPiso: " + to_string(Piso);
+    return cadena;
 }
 
 void cLugares::Imprimir()
 {
+    cout << To_String();
 }

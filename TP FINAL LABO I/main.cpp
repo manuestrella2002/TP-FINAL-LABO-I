@@ -11,7 +11,7 @@ int main()
 {
 	cHospital* Hospital = new cHospital("Favaloro", "Entre Rios 2550", 10000000);
 
-	cFecha* Fecha1 = new cFecha(10, 6, 2021);
+	cFecha* Fecha1 = new cFecha(25, 6, 2021);
 	cFecha* Fecha2 = new cFecha(10, 9, 2021);
 	cFecha* Fecha3 = new cFecha(10, 12, 2021);
 
@@ -42,18 +42,8 @@ int main()
 	(*Respirador1->Calendario) + Fecha2;
 	(*Respirador1->Calendario) + Fecha3;
 
-	
 
-
-	//la repacion se crea cuando hacemos el mantenimiento y cumple con los requisitos para arreglos
-	/*
-	(*Hospital->ListaReparaciones) + Reparacion1;
-	(*Hospital->ListaReparaciones) + Reparacion2;
-	(*Hospital->ListaReparaciones) + Reparacion3;
-	(*Hospital->ListaReparaciones) + Reparacion4;
-	*/
-
-	//agregamos a la lista con la sobrecarga +
+	//agregamos a la lista con la sobrecarga + los lugares
 	(*Hospital->ListaLugares) + Consultorio;
 	(*Hospital->ListaLugares) + Anestesia;
 	(*Hospital->ListaLugares) + Hemodinamia;
@@ -62,35 +52,28 @@ int main()
 	(*Hospital->ListaEquipos) + Electro1;
 	(*Hospital->ListaEquipos) + Mesa1;
 	(*Hospital->ListaEquipos) + Respirador1;
+
 	/*------------------------------------------------------------------------------------------*/
+	Hospital->ListaEquipos->RastrearEquipo();
+
 	Hospital->HacerMantenimiento();
 
+	cin >> (*Electro1);
+	cin >> (*Mesa1);
+	cin >> (*Respirador1);
+
+	cout << (*Electro1);
+	cout << (*Mesa1);
+	cout << (*Respirador1);
+
+	Consultorio->Imprimir();
+	Anestesia->Imprimir();
+	Hemodinamia->Imprimir();
+	Quirofano->Imprimir();
 	
 
-
-
-
-
-
-
-
-
-
-
-
-	/*
-	Electro1->Imprimir();
-	Mesa1->Imprimir();
-	Respirador1->Imprimir();
-	Consultorio->Imprimir();
-	calendario->Imprimir();
-	*/
-	//sobrecarga del cout en cLugares
-		cout << Consultorio;
-
 		//Vamos a controlar entorno a cHospital 
-
-		Hospital->ListarEquiposFueraLugar();
+	Hospital->FinalizarDia();
 
 	return 0;
 }

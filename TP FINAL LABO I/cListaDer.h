@@ -1,5 +1,7 @@
 #pragma once
 #include "cListaT.h"
+#include "cEquipoMedico.h"
+
 class cListaDer : public cListaT<cEquipoMedico>
 {
 public:

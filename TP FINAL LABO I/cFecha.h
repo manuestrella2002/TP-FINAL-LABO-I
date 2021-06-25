@@ -7,7 +7,7 @@ class cFecha
 	int dia, mes, anio;
 
 public:
-	cFecha(int dia_,int mes_, int anio_);
+	cFecha(int dia_,int mes_, int anio_); //la usamos para hacer la lista de fechas
 	~cFecha();
 	string getclave();
 
