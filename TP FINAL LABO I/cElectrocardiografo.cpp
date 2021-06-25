@@ -54,7 +54,7 @@ void cElectrocardiografo::SetPeso(float peso_)
 istream& operator>>(istream& in, cElectrocardiografo& Equipo)
 {
 	float aux;
-	cout << "Ingrese el peso: " << endl;
+	cout << "Ingrese el peso del electrocardiografo: " << endl;
 	in >> aux;
 	Equipo.SetPeso(aux);
 	return in;

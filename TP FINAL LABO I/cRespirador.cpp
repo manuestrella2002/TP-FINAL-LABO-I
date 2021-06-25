@@ -74,7 +74,8 @@ void cRespirador::ConfigurarFlujo(float aux_)
 istream& operator>>(istream& in, cRespirador& Respirador)
 {
 	float aux;
-	cout << "Ingrese el fujo a configurar: " << endl;
+	
+	cout << "Ingrese el fujo a configurar del Respirador: " << endl;
 	in >> aux;
 	Respirador.ConfigurarFlujo(aux);
 	return in;

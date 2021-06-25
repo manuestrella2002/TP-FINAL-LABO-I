@@ -64,7 +64,7 @@ cEstado cEquipoMedico::ChequearEstado()
 
 void cEquipoMedico::ImprimirAlerta()
 {
-    cout << "\nEl equipo"<< Nombre <<"no se encuentra en el lugar a guardar." << endl;
+    cout << "\nEl equipo "<< Nombre <<" no se encuentra en el lugar a guardar." << endl;
 }
 
 istream& operator>>(istream& in, cEquipoMedico& Equipo)

@@ -2,7 +2,6 @@
 #include "cCalendario.h"
 #include"cLugares.h"
 #include"cReparacion.h"
-#include <iostream>
 #include "cListaT.h"
 #include <ctime>
 
@@ -19,9 +18,9 @@ protected:
 	cEstado _Estado;
 	tm* Fecha_ult_Mant;
 	cLugares *Lugar_Actual, *Lugar_Guardar;
+	cCalendario* Calendario; // tiene la lista de fechas 
 
 public:
-	cCalendario* Calendario; // tiene la lista de fechas 
 	cEquipoMedico(string Nom_, const string COD, string Dim, float Peso_, cLugares* LugarGuardar_);
 	~cEquipoMedico();
 
@@ -41,6 +40,8 @@ public:
 	string getclave();
 
 	void setLugarActual(cLugares* aux);
+
+	friend class cHospital;
 
 	friend istream& operator>>(istream& in, cEquipoMedico& Equipo);
 	friend ostream& operator<<(ostream& out, const cEquipoMedico& Equipo); 

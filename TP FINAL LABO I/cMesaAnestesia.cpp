@@ -104,7 +104,7 @@ void cMesaAnestesia::SetSueño(int sueño_)
 istream& operator>>(istream& in, cMesaAnestesia& Mesa)
 {
 	float aux;
-	cout << "Ingrese el nivel del sueño: " << endl;
+	cout << "Ingrese el nivel del sueño de la Mesa de Anestesia: " << endl;
 	in >> aux;
 	Mesa.SetSueño(aux);
 	return in;

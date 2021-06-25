@@ -3,6 +3,9 @@
 #include<string>
 #include<ctime>
 #include"cListaDer.h"
+class cElectrocardiograma;
+class cMesaAnestesia;
+class cRespirador;
 
 using namespace std;
 
@@ -28,9 +31,9 @@ public:
 	void ListarEquiposFueraLugar();
 	void MoverEquipo(cEquipoMedico* Equipo, cLugares* aux);
 
-	friend class cElectrocardiografo;
-	friend class cRespirador;
-	friend class cMesaAnestesia;
+
+	void Inicializar();
+	void Funcionamiento();
 
 	void FinalizarDia(); //se fija que la cantidad de equipos sea mayor que 5 o que el costo sea mayor a 
 	//2000 dolares para realizar el mantenimiento correctivo, y tambien lista los equipos fuera de lugar
